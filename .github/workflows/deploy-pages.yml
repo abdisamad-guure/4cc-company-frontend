@@ -34,6 +34,7 @@ jobs:
         run: npm run build
         env:
           VITE_GITHUB_PAGES: "true"
+          VITE_API_URL: "https://backend-production-965c.up.railway.app/api"
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
