@@ -35,6 +35,7 @@ jobs:
         env:
           VITE_GITHUB_PAGES: "true"
           VITE_API_URL: "https://backend-production-965c.up.railway.app/api"
+          VITE_BASE_PATH: "/"
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
