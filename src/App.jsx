@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Footer, Header } from './components'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -11,7 +12,17 @@ import Products from './pages/Products'
 import Leadership from './pages/Leadership'
 
 function PublicLayout({ children }) { return <><Header/><main>{children}</main><Footer/></> }
-export default function App() { return <Routes>
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname])
+
+  return null
+}
+
+export default function App() { return <><ScrollToTop/><Routes>
   <Route path="/" element={<PublicLayout><Home/></PublicLayout>}/>
   <Route path="/about" element={<PublicLayout><About/></PublicLayout>}/>
   <Route path="/leadership" element={<PublicLayout><Leadership/></PublicLayout>}/>
@@ -22,4 +33,4 @@ export default function App() { return <Routes>
   <Route path="/admin/login" element={<AdminLogin/>}/>
   <Route path="/admin" element={<Dashboard/>}/>
   <Route path="*" element={<Navigate to="/" replace/>}/>
-</Routes> }
+</Routes></> }
