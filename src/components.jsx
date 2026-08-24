@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { ArrowRight, Globe2, Mail, MapPin, Menu, Phone, X } from 'lucide-react'
 import { useLanguage } from './i18n'
+import logo from './assets/4cc-logo.png'
 
 export function Logo({ light = false }) {
-  const logo = `${import.meta.env.BASE_URL}images/4cc-logo.png`
   return <Link to="/" className={`brand-logo shrink-0 ${light ? 'brand-logo--light' : ''}`} aria-label="4CC INC. home">
     <img src={logo} alt="4CC INC. Quality Control, Supply & Logistics, Distribution" />
   </Link>
