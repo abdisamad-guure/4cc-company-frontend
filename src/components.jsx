@@ -4,9 +4,9 @@ import { ArrowRight, Globe2, Mail, MapPin, Menu, Phone, X } from 'lucide-react'
 import { useLanguage } from './i18n'
 
 export function Logo({ light = false }) {
-  const logo = `${import.meta.env.BASE_URL}images/4cc-logo.png`
-  return <Link to="/" className={`brand-logo shrink-0 ${light ? 'brand-logo--light' : ''}`} aria-label="4CC INC. home">
-    <img src={logo} alt="4CC INC. Quality Control, Supply & Logistics, Distribution" />
+  return <Link to="/" className="flex items-center gap-3 shrink-0">
+    <span className="relative grid h-11 w-11 place-items-center rounded-xl bg-[#e97824] text-lg font-black text-white shadow-lg shadow-orange-950/20">4C<span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full border-2 border-[#e97824] bg-white text-[7px] text-[#0b2940]">C</span></span>
+    <span className={`font-display text-[21px] font-extrabold tracking-tight ${light ? 'text-white' : 'text-[#0b2940]'}`}>4CC <span className="text-[#e97824]">INC.</span></span>
   </Link>
 }
 
